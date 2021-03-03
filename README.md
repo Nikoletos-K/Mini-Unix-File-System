@@ -1,6 +1,11 @@
-![](https://img.shields.io/badge/UNIX-FILE%20SYSTEM-orange)
+![](https://img.shields.io/badge/UNIX-FILE%20SYSTEM-orange)  
+![](https://img.shields.io/badge/Language-%20C-blue)  
 # Mini-Unix-File-System 
 A small but fully functional Unix file system 
+
+__Compile:__ ```make``` \
+__Execution:__ ```./myfile```
+
 
 ## Files included
 1. ```fsPrompt.c``` : Prompt code
