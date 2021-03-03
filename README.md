@@ -1,4 +1,5 @@
-# Mini-Unix-File-System
+![](https://img.shields.io/badge/UNIX-FILE%20SYSTEM-orange)
+# Mini-Unix-File-System 
 A small but fully functional Unix file system 
 
 ## Project goal
@@ -94,5 +95,5 @@ typedef struct {
 
 The nodeid field is the characteristic file number that is unique to cfs, the size is the size of the file and type is the type of file. The basic types include: simple file, directory, link. If the cfs filesystem entity is a directory, then the parent-nodeid field symbolizes the parent directory attribute number. The fields creation_time, access_time and modification_time is the time of creation, last access and last modification, respectively. Finally, the data field holds the number of blocks occupied by that entity. In the above structure, the simplest form in terms of data is shown which is a table of numbers block, maximum number DATABLOCK_NUM. This does not mean that everything should be used block. 
 
-Data storage technique:
-![](/images/fs.jpg?raw=true "FS memory visualization")
+Data storage technique: \
+![](/images/fs.png?raw=true "FS memory visualization")
