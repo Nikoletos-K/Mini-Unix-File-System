@@ -1,5 +1,14 @@
-# Mini-Unix-File-System
+![](https://img.shields.io/badge/UNIX-FILE%20SYSTEM-orange)
+# Mini-Unix-File-System 
 A small but fully functional Unix file system 
+
+## Files included
+1. ```fsPrompt.c``` : Prompt code
+2. ```fsCommands.c``` : Functions code
+3. ```fsUtils.c``` : Utility code
+4. ```fileSystem.h```
+5. ```fsUtils.h```
+6. ```Makefile```
 
 ## Project goal
 The goal of this work is to create a limited but fully functional user system file system. The system called cfs (container file-system) provides all of its entities (files, directories, and links) as well as all of its functions within
@@ -94,5 +103,18 @@ typedef struct {
 
 The nodeid field is the characteristic file number that is unique to cfs, the size is the size of the file and type is the type of file. The basic types include: simple file, directory, link. If the cfs filesystem entity is a directory, then the parent-nodeid field symbolizes the parent directory attribute number. The fields creation_time, access_time and modification_time is the time of creation, last access and last modification, respectively. Finally, the data field holds the number of blocks occupied by that entity. In the above structure, the simplest form in terms of data is shown which is a table of numbers block, maximum number DATABLOCK_NUM. This does not mean that everything should be used block. 
 
-Data storage technique:
-![](/images/fs.jpg?raw=true "FS memory visualization")
+Data storage technique: \
+![](/images/fs.png?raw=true "FS memory visualization")
+
+__More specifically:__
+- We save a block (superblock) with information at the beginning of the .cfs file, useful for the operation of the file system.
+- Executing cfs_create creates a file system with .bin and root folders.
+- Each element consists of one or more blocks, where in the first block we save a struct metadata which contains useful information for each element(directory,file,link).
+- Directories consist of one or more blocks,  where in the first block there is initially a struct metadata stored and then followed by other structs that are "markers" in its contents.
+- The size of directories is dynamic, specifically whenever
+one block ends in size, another and its characteristic are bound
+number is stored in the metadata table. That way no
+we commit block from the beginning but dynamically and depending on the demand.
+- The size of the files is the size of the array in the metadata on it
+the size of a block. 
+- Links are only hard
