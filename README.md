@@ -122,4 +122,4 @@ number is stored in the metadata table. That way no
 we commit block from the beginning but dynamically and depending on the demand.
 - The size of the files is the size of the array in the metadata on it
 the size of a block. 
-- Links are only hard
+- Only hard links included.
